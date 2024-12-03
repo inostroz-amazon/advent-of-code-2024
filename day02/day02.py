@@ -40,5 +40,3 @@ if __name__ == '__main__':
                 logging.info(f'Safe: {numbers}')
                 count += 1
         logging.info(f' {count}')
-
-
