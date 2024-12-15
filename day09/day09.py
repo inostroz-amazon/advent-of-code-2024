@@ -35,6 +35,7 @@ def defragment_blocks(block_list: List[str]) -> List[str]:
 
 def defragment_files(block_list: List[str]) -> List[str]:
     j_end = len(block_list) - 1
+    logging.info(f' {block_list}')
     while j_end >= 0:
         while j_end > 0 and block_list[j_end] == '.':
             j_end -= 1
@@ -55,6 +56,8 @@ def defragment_files(block_list: List[str]) -> List[str]:
                     block_list[x] = block_list[j_end]
                 for x in range(j_start + 1, j_end + 1):
                     block_list[x] = '.'
+                logging.info(f' {block_list}')
+                break
             i_start = i_end
         j_end = j_start
     return block_list
